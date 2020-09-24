@@ -1,7 +1,8 @@
 <p align="center"><img src="https://github.com/KrzychuW/DBPediaSearch/blob/master/logo.svg" width="400"></p>
 
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/KrzychuW/DBPediaSearch"> <img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fwww.gamefly.pl%2F">
-
+[![Contributors][contributors-shield]][contributors-url]
+[![Stargazers][stars-shield]][stars-url]
+[![page-up][page-up-shields]][page-up-url]
 ## About Project 
 
 ### Focused Named Entity Identification and Linking
@@ -38,3 +39,9 @@ The project was made during the Applications of information technologies course 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: images/screenshot.png
+[contributors-shield]: https://img.shields.io/github/contributors/KrzychuW/DBPediaSearch
+[contributors-url]: https://github.com/KrzychuW/DBPediaSearch/graphs/contributors
+[stars-shield]: https://img.shields.io/github/contributors/KrzychuW/DBPediaSearch
+[stars-url]: https://github.com/KrzychuW/DBPediaSearch/stargazers
+[page-up-shields]: https://img.shields.io/website?url=https%3A%2F%2Fwww.gamefly.pl%2F
+[page-up-url]: https://www.gamefly.pl/
