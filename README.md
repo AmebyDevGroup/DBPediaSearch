@@ -1,10 +1,5 @@
 <p align="center"><img src="https://github.com/KrzychuW/DBPediaSearch/blob/master/logo.svg" width="400"></p>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
 ## About Project 
 
 ### Focused Named Entity Identification and Linking
@@ -41,13 +36,4 @@ The project was made during the Applications of information technologies course 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/KrzychuW/DBPediaSearch/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/KrzychuW/DBPediaSearch/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/KrzychuW/DBPediaSearch/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/KrzychuW/DBPediaSearch/issues
 [product-screenshot]: images/screenshot.png
