@@ -34,6 +34,7 @@ class AppController extends Controller
         $response = Http::post(env('SPOTLIGHT_URL', 'http://178.216.200.239:5000'), [
             'data' => $request->input('data', '')
         ]);
+
         return response()->json(collect($response->json())->unique('URI'));
     }
 
