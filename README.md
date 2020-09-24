@@ -1,7 +1,6 @@
 <p align="center"><img src="https://github.com/KrzychuW/DBPediaSearch/blob/master/logo.svg" width="400"></p>
 
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/KrzychuW/DBPediaSearch">
-<img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fwww.gamefly.pl%2F">
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/KrzychuW/DBPediaSearch"> <img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fwww.gamefly.pl%2F">
 
 ## About Project 
 
