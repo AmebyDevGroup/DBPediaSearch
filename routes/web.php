@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::post('/data/spotlight', 'AppController@getSpotlightData');
+Route::get('/data/sparql', 'AppController@getSparqlData');
 Route::get('/{any}', 'AppController@index')->where('any', '.*');

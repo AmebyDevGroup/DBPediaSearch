@@ -16,7 +16,7 @@ class AppController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -34,8 +34,31 @@ class AppController extends Controller
         $response = Http::post(env('SPOTLIGHT_URL', 'http://178.216.200.239:5000'), [
             'data' => $request->input('data', '')
         ]);
-
         return response()->json(collect($response->json())->unique('URI'));
+    }
+
+    public function getSparqlData(Request $request)
+    {
+
+        \EasyRdf\RdfNamespace::set('dbc', 'http://dbpedia.org/resource/Category:');
+        \EasyRdf\RdfNamespace::set('dbpedia', 'http://dbpedia.org/resource/');
+        \EasyRdf\RdfNamespace::set('dbo', 'http://dbpedia.org/ontology/');
+        \EasyRdf\RdfNamespace::set('dbp', 'http://dbpedia.org/property/');
+        $sparql = new \EasyRdf\Sparql\Client('http://dbpedia.org/sparql');
+        dd('test');
+        try {
+            $result = $sparql->query(
+                'SELECT * WHERE {'.
+                '  ?country rdf:type dbo:Country .'.
+                '  ?country rdfs:label ?label .'.
+                '  ?country dct:subject dbc:Member_states_of_the_United_Nations .'.
+                '  FILTER ( lang(?label) = "en" )'.
+                '} ORDER BY ?label'
+            );
+        } catch (Exception $e) {
+            print "<div class='error'>".$e->getMessage()."</div>\n";
+        }
+        dd($result);
     }
 
     public function test()
