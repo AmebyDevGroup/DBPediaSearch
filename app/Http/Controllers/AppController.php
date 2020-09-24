@@ -32,7 +32,7 @@ class AppController extends Controller
     public function getSpotlightData(Request $request)
     {
         $response = Http::post(env('SPOTLIGHT_URL', 'http://178.216.200.239:5000'), [
-            'data' => $request->input('data', '')
+            'data' => $request->input('data.data', '')
         ]);
 
         return response()->json(collect($response->json())->unique('URI'));
