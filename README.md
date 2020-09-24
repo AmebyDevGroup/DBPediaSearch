@@ -10,7 +10,7 @@ The task comprises the identification of named entities in sentences and the dis
 
 
 ## Overview 
-# Screenshots
+### Screenshots
 [![Product Name Screen Shot][product-screenshot]](https://gamefly.pl/)
 
 ## Description
