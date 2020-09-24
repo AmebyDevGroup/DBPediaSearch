@@ -35,7 +35,12 @@ class AppController extends Controller
             'data' => $request->input('data.data', '')
         ]);
 
-        return response()->json(collect($response->json())->unique('URI'));
+        $response_data = collect($response->json())->unique('URI')->map(function($item) {
+            $item['types'] = explode(',', $item['types']);
+            return $item;
+        });
+
+        return response()->json($response_data);
     }
 
     public function getSparqlData(Request $request)
