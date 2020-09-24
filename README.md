@@ -2,7 +2,7 @@
 
 ## About Project 
 
-# Focused Named Entity Identification and Linking
+### Focused Named Entity Identification and Linking
 
 The task comprises the identification of named entities in sentences and the disambiguation of the identified entities to the DBpedia knowledge base. This task is limited to three DBpedia ontology classes (Person, Place, Organisation) and their associated sub classes.
 
@@ -22,4 +22,4 @@ The task comprises the identification of named entities in sentences and the dis
 
 ## Licencja
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT)
