@@ -1,9 +1,11 @@
 <p align="center"><img src="https://github.com/KrzychuW/DBPediaSearch/blob/master/logo.svg" width="400"></p>
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+
 ## About Project 
 
 ### Focused Named Entity Identification and Linking
