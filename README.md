@@ -14,7 +14,7 @@ The task comprises the identification of named entities in sentences and the dis
 
 ## Authors 
 
-# AmebyDevGroup 
+### AmebyDevGroup 
 - <a href="https://github.com/jlorc">Jakub Lorc</a>
 - <a href="https://github.com/Dens0">Adrian Sutkowski</a>
 - <a href="https://github.com/WerVa">Jakub Werwiński</a>
