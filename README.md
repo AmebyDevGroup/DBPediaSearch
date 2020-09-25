@@ -17,8 +17,21 @@ The task comprises the identification of named entities in sentences and the dis
 Powered by <a href="https://www.e24cloud.com/">e24cloud</a> server. 
 Link for App: <a href="https://dbpsearch.online/">DBPediaSearch</a> 
 ### Tools used
-- Laravel 
-- Vue
+
+### PHP
+- Laravel
+- EasyRDF
+- laravel-nlp
+
+### JS
+- VUE.JS
+
+### Python
+- Flask
+- spaCy 
+- Polyglot
+- PySpotlight
+
 
 ## Authors 
 
