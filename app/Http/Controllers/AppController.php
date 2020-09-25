@@ -36,7 +36,7 @@ class AppController extends Controller
         ]);
 
         $response_data = collect($response->json())->unique('URI')->map(function($item) {
-            $item['types'] = explode(',', $item['types']);
+            $item['types'] = $item['types']!=''?explode(',', $item['types']):[];
             return $item;
         });
 
