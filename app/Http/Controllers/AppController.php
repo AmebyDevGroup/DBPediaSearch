@@ -45,33 +45,31 @@ class AppController extends Controller
 
     public function getSparqlData(Request $request)
     {
-
         \EasyRdf\RdfNamespace::set('dbc', 'http://dbpedia.org/resource/Category:');
         \EasyRdf\RdfNamespace::set('dbpedia', 'http://dbpedia.org/resource/');
         \EasyRdf\RdfNamespace::set('dbo', 'http://dbpedia.org/ontology/');
         \EasyRdf\RdfNamespace::set('dbp', 'http://dbpedia.org/property/');
         $sparql = new \EasyRdf\Sparql\Client('http://dbpedia.org/sparql');
-        dd('test');
         try {
             $result = $sparql->query(
                 'SELECT * WHERE {'.
-                '  ?country rdf:type dbo:Country .'.
-                '  ?country rdfs:label ?label .'.
-                '  ?country dct:subject dbc:Member_states_of_the_United_Nations .'.
+                '  ?url rdf:type dbo:Country .'.
+                '  ?url rdfs:label ?label .'.
+                '  ?url dct:subject dbc:Member_states_of_the_United_Nations .'.
                 '  FILTER ( lang(?label) = "en" )'.
                 '} ORDER BY ?label'
             );
         } catch (Exception $e) {
             print "<div class='error'>".$e->getMessage()."</div>\n";
         }
-        dd($result);
     }
 
-    public function test()
+    public function getRdfData(Request $request)
     {
-        $test = "We know that there are no perfect products. Come to think about it, perfect in what way? Recognizing clients’ needs, fitting the market, sales, user experience, design, lack of software bugs? Or maybe a little bit of everything?
-One thing we know for sure. There are applications on the market which are just great. They combine pragmatism, because they solve users’ problems and using such apps is pure pleasure.";
-        $entities_spacy = NLP::spacy_entities( $test, 'en' );
-        dd($entities_spacy);
+        $uri = $request->input('data.uri', '');
+        $foaf = new \App\src\EasyRdf\Graph($uri);
+        $foaf->load();
+
+        return response()->json(['data' => $foaf->dump('html')]);
     }
 }
