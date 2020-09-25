@@ -73,6 +73,7 @@ body,
     &__search {
         max-width: 20px;
         margin-right: 10px;
+        cursor: pointer;
     }
 }
 
@@ -115,6 +116,7 @@ body,
         position: absolute;
         top: 8px;
         right: 10px;
+        cursor: pointer;
     }
 }
 
@@ -122,6 +124,17 @@ body,
     height: calc(100vh - 125px);
     margin-top: 30px;
     width: 100%;
+    padding: 25px;
+
+    &__name {
+        font-size: 22px;
+        font-family: globalFont;
+        color: #194359;
+    }
+
+    &__info {
+        color: #A9A9A9;
+    }
 
     &__box {
         display: flex;
@@ -133,5 +146,15 @@ body,
     &__empty {
         font-family: globalFont;
         font-size: 32px;
+    }
+
+    &__content {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__item {
+        margin-bottom: 30px;
+        max-width: 600px;
     }
 }
