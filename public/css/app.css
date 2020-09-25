@@ -11005,6 +11005,7 @@ body,
 .home__search {
   max-width: 20px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .menu {
@@ -11049,12 +11050,32 @@ body,
   position: absolute;
   top: 8px;
   right: 10px;
+  cursor: pointer;
 }
 
 .results {
   height: calc(100vh - 125px);
   margin-top: 30px;
   width: 100%;
+  padding: 25px;
+}
+
+.results__name {
+  font-size: 22px;
+  font-family: globalFont;
+  color: #194359;
+}
+
+.results__rdf {
+  position: absolute;
+  top: 5px;
+  right: -35px;
+  max-width: 20px;
+  cursor: pointer;
+}
+
+.results__info {
+  color: #A9A9A9;
 }
 
 .results__box {
@@ -11067,5 +11088,35 @@ body,
 .results__empty {
   font-family: globalFont;
   font-size: 32px;
+}
+
+.results__content {
+  height: 100%;
+  width: 100%;
+}
+
+.results__relative {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.results__item {
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.results__slot {
+  position: absolute;
+  right: 50px;
+  top: 140px;
+  width: 600px;
+  height: 750px;
+  overflow-y: auto;
+}
+
+.results__slot * {
+  background-color: #f8fafc !important;
 }
 

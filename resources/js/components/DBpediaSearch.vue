@@ -20,18 +20,22 @@
                 <span class="results__empty" v-if="data.length === 0">Wyniki wyszukiwania</span>
                 <div v-if="data.length !== 0" class="results__content">
                     <div v-for="item in data" class="results__item">
-                        <a :href="item.URI" class="results__name" target="_blank">{{ item.surfaceForm }}</a>
+                        <div class="results__relative">
+                            <a :href="item.URI" class="results__name" target="_blank">{{ item.surfaceForm }}</a>
+                            <img src="/images/rdf_ico.svg" alt="" class="results__rdf" @click="getRDFData(item)">
+                        </div>
                         <div class="results__uri">{{ item.URI }}</div>
                         <span class="results__info">
                             Additional info:
                             <span v-if="item.types.length !== 0" v-for="elem in item.types">
                                 {{ elem }}
                             </span>
-                            <span v-else>Empty</span>
+                            <span v-if="item.types.length === 0">Empty</span>
                         </span>
                     </div>
                 </div>
             </div>
+            <div v-html="rdfHtml" v-if="rdfHtml" class="results__slot"></div>
         </div>
     </div>
 </template>
@@ -43,6 +47,7 @@
               inputValue: '',
               isSearchActive: false,
               data: [],
+              rdfHtml: false,
           }
         },
         methods: {
@@ -52,11 +57,19 @@
                     data: {
                         data: `${this.inputValue}`
                     }
-                }).then(data => {
-                    console.log('data', data);
-                    this.data = data.data;
+                }).then(res => {
+                    this.data = res.data;
                     if (!this.isSearchActive) this.isSearchActive = true;
                     this.inputValue = '';
+                })
+            },
+            getRDFData(item) {
+                axios.post('/data/rdf',{
+                    data: {
+                        uri: `${item.URI}`
+                    }
+                }).then(res => {
+                    this.rdfHtml = res.data.data;
                 })
             }
         }
