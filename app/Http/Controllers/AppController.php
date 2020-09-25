@@ -52,21 +52,18 @@ class AppController extends Controller
         $sparql = new \EasyRdf\Sparql\Client('http://dbpedia.org/sparql');
         try {
             $result = $sparql->query(
-                'SELECT * WHERE {'.
-                '  ?url rdf:type dbo:Country .'.
-                '  ?url rdfs:label ?label .'.
-                '  ?url dct:subject dbc:Member_states_of_the_United_Nations .'.
-                '  FILTER ( lang(?label) = "en" )'.
-                '} ORDER BY ?label'
+                $request->input('data.query', '')
             );
-        } catch (Exception $e) {
+            $response['status'] = 'success';
+        } catch (\Exception $e) {
+            dd($e->getMessage());
             print "<div class='error'>".$e->getMessage()."</div>\n";
         }
     }
 
     public function getRdfData(Request $request)
     {
-        $uri = $request->input('data.uri', '').'.rdf';
+        $uri = str_replace('\resource\\', '\data\\',$request->input('data.uri', '')).'.rdf';
         $foaf = new \App\src\EasyRdf\Graph($uri);
         $foaf->load();
 
