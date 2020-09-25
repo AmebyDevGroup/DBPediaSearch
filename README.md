@@ -53,5 +53,5 @@ The project was made during the Applications of information technologies course 
 [product-screenshot]: images/screenshot.png
 [contributors-shield]: https://img.shields.io/github/contributors/KrzychuW/DBPediaSearch
 [contributors-url]: https://github.com/KrzychuW/DBPediaSearch/graphs/contributors
-[page-up-shields]: https://img.shields.io/website?url=https%3A%2F%2Fwww.gamefly.pl%2F
+[page-up-shields]: https://img.shields.io/website?url=https%3A%2F%2Fwww.dbpsearch.online%2F
 [page-up-url]: https://www.gamefly.pl/
