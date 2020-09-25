@@ -11107,10 +11107,17 @@ body,
   max-width: 600px;
 }
 
+.results__number {
+  font-size: 16px;
+  color: #A9A9A9;
+  margin-top: -30px;
+  margin-bottom: 40px;
+}
+
 .results__slot {
   position: absolute;
   right: 50px;
-  top: 140px;
+  top: 170px;
   width: 600px;
   height: 750px;
   overflow-y: auto;

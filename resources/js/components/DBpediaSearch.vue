@@ -11,11 +11,12 @@
         <div class="menu" v-if="isSearchActive">
             <img src="/images/dbpedia.svg" alt="" class="menu__logo" @click="isSearchActive = false">
             <div class="menu__input-wrapper">
-                <input type="text" class="menu__input" placeholder="Wyszukaj..." v-model="inputValue">
+                <input type="text" class="menu__input" placeholder="Wyszukaj..." v-model="inputValue" @keyup.enter="search()">
                 <img src="/images/lupa.svg" alt="" class="menu__search" @click="search()">
             </div>
         </div>
         <div class="results" v-if="isSearchActive">
+            <div class="results__number">Znaleziono {{ data.length }} wyników</div>
             <div class="results__box">
                 <span class="results__empty" v-if="data.length === 0">Wyniki wyszukiwania</span>
                 <div v-if="data.length !== 0" class="results__content">
@@ -61,9 +62,15 @@
                     this.data = res.data;
                     if (!this.isSearchActive) this.isSearchActive = true;
                     this.inputValue = '';
+                    this.rdfHtml = false;
                 })
             },
             getRDFData(item) {
+                if (this.rdfHtml) {
+                    this.rdfHtml = false;
+                    return;
+                }
+                
                 axios.post('/data/rdf',{
                     data: {
                         uri: `${item.URI}`
