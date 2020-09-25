@@ -43,6 +43,16 @@ class AppController extends Controller
         return response()->json($response_data);
     }
 
+    public function getSparqlNamespaces()
+    {
+        \EasyRdf\RdfNamespace::set('dbc', 'http://dbpedia.org/resource/Category:');
+        \EasyRdf\RdfNamespace::set('dbpedia', 'http://dbpedia.org/resource/');
+        \EasyRdf\RdfNamespace::set('dbo', 'http://dbpedia.org/ontology/');
+        \EasyRdf\RdfNamespace::set('dbp', 'http://dbpedia.org/property/');
+
+        return response()->json(\EasyRdf\RdfNamespace::namespaces());
+    }
+
     public function getSparqlData(Request $request)
     {
         \EasyRdf\RdfNamespace::set('dbc', 'http://dbpedia.org/resource/Category:');
@@ -50,15 +60,24 @@ class AppController extends Controller
         \EasyRdf\RdfNamespace::set('dbo', 'http://dbpedia.org/ontology/');
         \EasyRdf\RdfNamespace::set('dbp', 'http://dbpedia.org/property/');
         $sparql = new \EasyRdf\Sparql\Client('http://dbpedia.org/sparql');
+
         try {
             $result = $sparql->query(
                 $request->input('data.query', '')
             );
             $response['status'] = 'success';
+            $data = collect((array)$result)->map(function($value) {
+                $value->url = $value->url->getUri();
+                $value->label = $value->label->getValue() . '(lang: ' . $value->label->getLang() . ')';
+                return $value;
+                })->toArray();
+            $response['data'] = $data;
         } catch (\Exception $e) {
-            dd($e->getMessage());
-            print "<div class='error'>".$e->getMessage()."</div>\n";
+            $response['status'] = 'error';
+            $response['message'] = $e->getMessage();
         }
+
+        return response()->json($response);
     }
 
     public function getRdfData(Request $request)
