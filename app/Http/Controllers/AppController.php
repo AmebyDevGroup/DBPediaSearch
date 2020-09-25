@@ -66,7 +66,7 @@ class AppController extends Controller
 
     public function getRdfData(Request $request)
     {
-        $uri = $request->input('data.uri', '');
+        $uri = $request->input('data.uri', '').'.rdf';
         $foaf = new \App\src\EasyRdf\Graph($uri);
         $foaf->load();
 
