@@ -15,12 +15,20 @@
                 <img src="/images/lupa.svg" alt="" class="menu__search" @click="search()">
             </div>
         </div>
-        <div class="container" v-if="isSearchActive">
-            <div class="row">
-                <div class="results">
-                    <div class="results__box">
-                        <span class="results__empty" v-if="data.length === 0">Wyniki wyszukiwania</span>
-                        <span v-if="data.length !== 0">{{ data }}</span>
+        <div class="results" v-if="isSearchActive">
+            <div class="results__box">
+                <span class="results__empty" v-if="data.length === 0">Wyniki wyszukiwania</span>
+                <div v-if="data.length !== 0" class="results__content">
+                    <div v-for="item in data" class="results__item">
+                        <a :href="item.URI" class="results__name" target="_blank">{{ item.surfaceForm }}</a>
+                        <div class="results__uri">{{ item.URI }}</div>
+                        <span class="results__info">
+                            Additional info:
+                            <span v-if="item.types.length !== 0" v-for="elem in item.types">
+                                {{ elem }}
+                            </span>
+                            <span v-else>Empty</span>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -45,6 +53,7 @@
                         data: `${this.inputValue}`
                     }
                 }).then(data => {
+                    console.log('data', data);
                     this.data = data.data;
                     if (!this.isSearchActive) this.isSearchActive = true;
                     this.inputValue = '';

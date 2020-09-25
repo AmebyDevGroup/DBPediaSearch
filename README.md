@@ -11,11 +11,11 @@ The task comprises the identification of named entities in sentences and the dis
 
 ## Overview 
 ### Screenshots
-[![Product Name Screen Shot][product-screenshot]](https://gamefly.pl/)
+[![Product Name Screen Shot][product-screenshot]](https://dbpsearch.online/)
 
 ## Description
 Powered by <a href="https://www.e24cloud.com/">e24cloud</a> server. 
-Link for App: <a href="https://gamefly.pl/">DBPediaSearch</a> 
+Link for App: <a href="https://dbpsearch.online/">DBPediaSearch</a> 
 ### Tools used
 - Laravel 
 - Vue
