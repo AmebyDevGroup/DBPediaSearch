@@ -11,7 +11,9 @@ The task comprises the identification of named entities in sentences and the dis
 
 ## Overview 
 ### Screenshots
-[![Product Name Screen Shot][product-screenshot]](https://dbpsearch.online/)
+<a href="https://dbpsearch.online/"><p align="center"><img src="https://github.com/KrzychuW/DBPediaSearch/blob/master/screenshot.png" width="400"></p></a>
+
+
 
 ## Description
 Powered by <a href="https://www.e24cloud.com/">e24cloud</a> server. 
@@ -50,7 +52,6 @@ The project was made during the Applications of information technologies course 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: images/screenshot.png
 [contributors-shield]: https://img.shields.io/github/contributors/KrzychuW/DBPediaSearch
 [contributors-url]: https://github.com/KrzychuW/DBPediaSearch/graphs/contributors
 [page-up-shields]: https://img.shields.io/website?url=https%3A%2F%2Fwww.dbpsearch.online%2F
