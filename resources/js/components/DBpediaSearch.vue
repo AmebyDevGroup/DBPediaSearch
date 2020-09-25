@@ -38,6 +38,9 @@
             </div>
             <div v-html="rdfHtml" v-if="rdfHtml" class="results__slot"></div>
         </div>
+        <div class="loader" v-if="isLoading">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
     </div>
 </template>
 
@@ -49,6 +52,8 @@
               isSearchActive: false,
               data: [],
               rdfHtml: false,
+              isLoading: false,
+              clickedItem: '',
           }
         },
         methods: {
@@ -66,17 +71,20 @@
                 })
             },
             getRDFData(item) {
-                if (this.rdfHtml) {
+                if (!this.rdfHtml) this.clickedItem = '';
+                if (this.clickedItem === item.surfaceForm) {
                     this.rdfHtml = false;
                     return;
                 }
-                
+                this.clickedItem = item.surfaceForm;
+                this.isLoading = true;
                 axios.post('/data/rdf',{
                     data: {
                         uri: `${item.URI}`
                     }
                 }).then(res => {
                     this.rdfHtml = res.data.data;
+                    this.isLoading = false;
                 })
             }
         }
