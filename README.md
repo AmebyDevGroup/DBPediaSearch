@@ -47,7 +47,7 @@ Link for App: <a href="https://dbpsearch.online/">DBPediaSearch</a>
 
 ## Credits
 
-The project was made during the Applications of information technologies course held by the Institute of Automation and Information Technology, Poznan University of Technology
+The project was made during the Applications of information technologies course held by the Institute of Automation and Information Technology, Poznan University of Technology.
 
 
 
