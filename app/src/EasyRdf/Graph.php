@@ -269,7 +269,7 @@ class Graph extends \EasyRdf\Graph
         // Setup the HTTP client
         $client = Http::getDefaultHttpClient();
         $client->resetParameters(true);
-        $client->setConfig(array('maxredirects' => 0));
+        $client->setConfig(array('maxredirects' => 0, 'timeout'=>120));
         $client->setMethod('GET');
 
         if ($format && $format !== 'guess') {
