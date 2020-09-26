@@ -18,7 +18,7 @@
         <div class="results" v-if="isSearchActive">
             <div class="results__number">Znaleziono {{ data.length }} wyników</div>
             <div class="results__box">
-                <span class="results__empty" v-if="data.length === 0">Wyniki wyszukiwania</span>
+                <span class="results__empty" v-if="data.length === 0">Nie znaleziono wyników</span>
                 <div v-if="data.length !== 0" class="results__content">
                     <div v-for="item in data" class="results__item">
                         <div class="results__relative">
